@@ -34,6 +34,12 @@ const IndexPage = () => {
     setTxHash(tx.hash);
   };
 
+  const submitBid = async () => {
+    if (!provider) return;
+    const tx = await PartyBid.bid();
+    setTxHash(tx.hash);
+  };
+
   return (
     <div className="index">
       <div className="section">
@@ -61,6 +67,14 @@ const IndexPage = () => {
           Submit
         </button>
       </div>
+
+      <div className="section">
+        Submit Bid (This will submit our bid to Foundation!)
+        <button disabled={!account} onClick={submitBid}>
+          Submit
+        </button>
+      </div>
+
       {txHash && (
         <div className="section">
           TX Hash: {txHash}
@@ -70,6 +84,25 @@ const IndexPage = () => {
           </a>
         </div>
       )}
+
+      <div className="section">
+        <br />
+        Microcosm #22 by Jen Stark:{' '}
+        <a
+          href="https://foundation.app/@JenStark_Vault/cosmos/22"
+          target="_blank"
+        >
+          https://foundation.app/@JenStark_Vault/cosmos/22
+        </a>{' '}
+        <br />
+        The deployed PartyBid contract:{' '}
+        <a
+          href="https://etherscan.io/address/0x5dCc03D9A613E59db4751D1071dBAF3cAEDFFd30"
+          target="_blank"
+        >
+          https://etherscan.io/address/0x5dCc03D9A613E59db4751D1071dBAF3cAEDFFd30
+        </a>
+      </div>
       <style jsx>{`
         .index {
         }
