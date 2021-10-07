@@ -41,6 +41,12 @@ const IndexPage = () => {
     setTxHash(tx.hash);
   };
 
+  const finalize = async () => {
+    if (!provider) return;
+    const tx = await PartyBid.finalize();
+    setTxHash(tx.hash);
+  };
+
   return (
     <div className="index">
       <div className="section">
@@ -87,6 +93,13 @@ const IndexPage = () => {
       <div className="section">
         Submit Bid (This will submit our bid to Foundation!)
         <button disabled={!account} onClick={submitBid}>
+          Submit
+        </button>
+      </div>
+
+      <div className="section">
+        Finalize
+        <button disabled={!account} onClick={finalize}>
           Submit
         </button>
       </div>
