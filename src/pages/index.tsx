@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PartyBid__factory } from '@sdk/factories/PartyBid__factory';
 import { useWallet } from '@gimmixorg/use-wallet';
 import { providers, utils } from 'ethers';
+import WalletConnectProvider from '@walletconnect/web3-provider';
 
 const IndexPage = () => {
   const { account, provider, connect } = useWallet();
@@ -46,7 +47,22 @@ const IndexPage = () => {
         {account ? (
           <>Logged in as {account}</>
         ) : (
-          <button onClick={() => connect({})}>Connect Wallet</button>
+          <button
+            onClick={() =>
+              connect({
+                providerOptions: {
+                  walletconnect: {
+                    package: WalletConnectProvider,
+                    options: {
+                      infuraId: 'b95f6330bfdd4f5d8960db9d1d3da676'
+                    }
+                  }
+                }
+              })
+            }
+          >
+            Connect Wallet
+          </button>
         )}
       </div>
       <div className="section">
