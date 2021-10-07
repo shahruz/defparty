@@ -102,7 +102,6 @@ const IndexPage = () => {
       )}
 
       <div className="section">
-        <br />
         Microcosm #22 by Jen Stark:{' '}
         <a
           href="https://foundation.app/@JenStark_Vault/cosmos/22"
@@ -117,6 +116,11 @@ const IndexPage = () => {
           target="_blank"
         >
           https://etherscan.io/address/0x5dCc03D9A613E59db4751D1071dBAF3cAEDFFd30
+        </a>
+        <br />
+        Site code{' '}
+        <a href="https://github.com/shahruz/defparty" target="_blank">
+          https://github.com/shahruz/defparty
         </a>
       </div>
       <style jsx>{`
