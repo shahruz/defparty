@@ -1,3 +1,7 @@
 .next
 node_modules
 .DS_Store
+# Local Netlify folder
+.netlify
+
+out

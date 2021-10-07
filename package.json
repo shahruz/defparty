@@ -1,12 +1,13 @@
 {
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next"
   },
   "dependencies": {
     "@gimmixorg/use-wallet": "^0.0.25",
     "ethers": "^5.4.7",
+    "netlify-cli": "^6.10.3",
     "next": "^11.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
