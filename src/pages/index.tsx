@@ -98,7 +98,7 @@ const IndexPage = () => {
       </div>
 
       <div className="section">
-        Finalize
+        Finalize{' '}
         <button disabled={!account} onClick={finalize}>
           Submit
         </button>
